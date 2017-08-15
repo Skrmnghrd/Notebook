@@ -1,0 +1,66 @@
+{% extends 'layout.html' %}
+
+
+{% block body%}
+<div class="well">
+      <center> 
+        {% from "includes/_formhelpers.html" import render_field %}
+            {%  if request.method == 'POST' %}
+                  <h4> Enter IP, Class, And Dividend</h4>
+                  <h3> Under Development!! </h3> 
+                  <small> [for now, it only works on class c ip's and hosts]</small>
+                  <form method="POST" action="">
+                        <div class="form-group">
+                        {{ render_field(form.Given_ip, class_="form-control")}}
+                        </div>
+            
+                        <div class="form-group">
+                        {{ render_field(form.Dividend, class_="form-control")}}
+                        </div>
+                  
+                        <div class="form-group">
+                        {{ render_field(form.IP_class, class_="form-control")}}
+                        </div>
+                        
+                        <div class="form-group">
+                        {{ render_field(form.network_or_host, class_="form-control")}}
+                        </div>
+                        
+                         {{given_ip}}
+                          {{dividend}}
+                           {{ip_class}}
+                            {{network_or_host}}
+                            {% for items in range_of_ips %}
+                            <li> {{items}} </li>
+                            {% endfor %}
+                  <p><input type="submit" class="btn btn-primary" value="Submit"></p>
+                  </form>
+            {% else %}
+                  <h4> Enter IP and Subnet </h4>
+                  <h3> Under Development!! </h3> 
+                  <small> [for now, it only works on class c ip's and hosts]</small>
+                  <form method="POST" action="">
+                       <div class="form-group">
+                        {{ render_field(form.Given_ip, class_="form-control")}}
+                        </div>
+            
+                        <div class="form-group">
+                        {{ render_field(form.Dividend, class_="form-control")}}
+                        </div>
+                  
+                        <div class="form-group">
+                        {{ render_field(form.IP_class, class_="form-control")}}
+                        </div>
+                        
+                        <div class="form-group">
+                        {{ render_field(form.network_or_host, class_="form-control")}}
+                        </div>
+                  <p><input type="submit" class="btn btn-primary" value="Submit"></p>
+                  </form>
+        {% endif %}
+
+   
+      </center>
+</div>
+
+{% endblock %}

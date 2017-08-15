@@ -1,0 +1,32 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+{% for article in result %}
+    <center>
+    	<h1>{{article.topic_name}}</h1>
+        {% if session.logged_in == True %}
+    	<a href="{{ url_for('edit_article', id=article.id )  }}"><input type="submit" value="Edit" class="btn btn-danger"></a>
+        {% endif %}
+    </center>
+    <div>
+    <h2> Procedures: </h2>
+    <p align="left"> {{article.explaination | safe}} </p>
+    </div>
+
+    <div>
+    <h2> User Notes: </h2>
+    <p align="left"> {{article.notes | safe}} </p>
+    </div>
+
+    <div>
+    <h2> Commands: </h2>
+    <code>
+    <samp>
+        <p align="left"> {{article.commands | safe}} </p>
+    </samp>
+    </code>
+    </div>
+    <!-- instead of <pre> run |safe to exec html codes -->
+{% endfor %}
+
+{% endblock %}

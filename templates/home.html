@@ -1,0 +1,18 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+  <div class="jumbotron text-center">
+    <h1>Welcome To The Notebook</h1>
+    <p class="lead">This application is built using the Python Flask framework, Jinja/HTML, Bootstrap. The database is SQLite3. For future versions we could implement a function that will save/sync the personal db to a db on the cloud</p>
+    <p>
+    	(Some Codes taken from the video here)
+    </p>
+    <p>
+    	https://www.youtube.com/watch?v=zRwy8gtgJ1A
+    </p>
+    {% if session.logged_in == NULL %}
+      <a href="/register" class="btn btn-primary btn-lg">Register</a>
+      <a href="/login" class="btn btn-success btn-lg">Login</a>
+    {% endif %}
+  </div>
+{% endblock %}

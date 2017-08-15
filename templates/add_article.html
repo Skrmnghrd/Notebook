@@ -1,0 +1,34 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+  <h1>Add Topic</h1>
+  {% from "includes/_formhelpers.html" import render_field %}
+  <form method="POST" action="">
+    <div class="form-group">
+      {{ render_field(form.commands, class_="form-control") }}
+    </div>
+
+    <div class="form-group">
+      {{ render_field(form.explaination, class_="form-control",  class="ckeditor") }}
+    </div>
+
+     <div class="form-group">
+      {{ render_field(form.notes, class_="form-control",  class="ckeditor") }}
+    </div>
+
+     <div class="form-group">
+      {{ render_field(form.topic_name, class_="form-control") }}
+    </div>
+
+
+     <div class="form-group">
+      {{ render_field(form.tags, class_="form-control") }}
+    </div>
+    
+    <p><input class="btn btn-primary" type="submit" value="Submit">
+  </form>
+{% endblock %}
+<!---
+sudo find /var/www/platosoasis.com/ -type d -exec chmod 755 {} \;
+sudo find /var/www/platosoasis.com/ -type f -exec chmod 644 {} \;
+-->

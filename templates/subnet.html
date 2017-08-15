@@ -1,0 +1,48 @@
+{% extends 'layout.html' %}
+
+
+{% block body%}
+<div class="well">
+      <center> 
+        {% from "includes/_formhelpers.html" import render_field %}
+        {%  if request.method == 'POST' %}
+                <form method="POST" action="">
+                    <div class="form-group">
+                    {{ render_field(form.host_ip, class_="form-control")}}
+                    </div>
+                    <div class="form-group">
+                    {{ render_field(form.subnet, class_="form-control")}}
+                    </div>
+                 <p><input type="submit" class="btn btn-primary" value="Submit"></p>
+                </form>
+                <h4> Subnet IP address: {{network}} </h4>
+               <h4> Broadcast IP address:  {{ broadcast }}</h4>
+                <h4> Inverse Mask:  {{ inverse_mask}} </h4>
+        {% else %}
+             <h4> Enter IP and Subnet </h4>
+                <form method="POST" action="">
+                    <div class="form-group">
+                    {{ render_field(form.host_ip, class_="form-control")}}
+                    </div>
+                    <div class="form-group">
+                    {{ render_field(form.subnet, class_="form-control")}}
+                    </div>
+                 <p><input type="submit" class="btn btn-primary" value="Submit"></p>
+                </form>
+        {% endif %}
+             <!-- 
+                 <h4>
+        {% if user=='Paulo' %}
+         <h4> Hello Creator </h4>
+        {% elif user %}
+            <h4> Hello {{ user }} </h4>
+        {% else %}
+            <h4> Pleaase log in </h4>
+        {% endif %}
+	</h4>
+             -->
+
+
+      </center>
+</div>
+{% endblock %}
