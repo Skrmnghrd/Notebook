@@ -1,6 +1,7 @@
 {% extends 'layout.html' %}
 
 {% block body %}
+<<<<<<< HEAD
 <center> 
   <ul class="breadcrumb">
     <li><a href="/"><small>Home</small></a></li>
@@ -38,6 +39,24 @@
           </div>
           </td>
         <td>{{article.tags | safe}}</td>
+=======
+  <h1>Dashboard <small> Welcome {{session.username}}</small></h1>
+  <a class="btn btn-success" href="/add_article"> Add Article</a>
+  <hr>
+  <table class="table table-striped">
+    <tr>
+      <th>ID</th>
+      <th>Topic Name / Title</th>
+      <th>Tags</th>
+      <th></th>
+      <th></th>
+    </tr>
+    {% for article in articles %}
+      <tr>
+        <td>{{article.id}}</td>
+        <td>{{article.topic_name}}</td>
+        <td>{{article.notes}}</td>
+>>>>>>> 840c399edd6dec43958d3a4d5cf7fd0e419ce125
         <td><a href="edit_article/{{article.id}}" class="btn btn-default pull-right">Edit</a></td>
         <td>
           <form action="{{url_for('delete_article', id=article.id)}}" method="post">
@@ -48,6 +67,9 @@
       </tr>
     {% endfor %}
   </table>
+<<<<<<< HEAD
    </div>
     </div>
+=======
+>>>>>>> 840c399edd6dec43958d3a4d5cf7fd0e419ce125
 {% endblock %}

@@ -1,6 +1,7 @@
 {% extends 'layout.html' %}
 
 {% block body %}
+<<<<<<< HEAD
 <ul class="breadcrumb">
   <li class="breadcrumb-item"><a href="/"><small>Home</small></a></li>
   <li class="breadcrumb-item active"><small>Articles</small></li>
@@ -10,6 +11,12 @@
 {% for article in articles %}
 	<ul class="list-group">
 	      <h4><li class="list-group-item"><a style="color: black; text-decoration: none;" href="article/{{article.id}}">{{article.topic_name | safe }}</a></li></h4>
+=======
+<center><h1>Articles</h1></center>
+{% for article in articles %}
+	<ul class="list-group">
+	      <h4><li class="list-group-item"><a href="article/{{article.id}}">{{article.topic_name}}</a></li></h4>
+>>>>>>> 840c399edd6dec43958d3a4d5cf7fd0e419ce125
   	</ul>
 {% endfor %}
 

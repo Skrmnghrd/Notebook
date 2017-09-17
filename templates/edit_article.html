@@ -1,6 +1,7 @@
 {% extends 'layout.html' %}
 
 {% block body %}
+<<<<<<< HEAD
 
   <ul class="breadcrumb">
     <li><a href="/"><small>Home</small></a></li>
@@ -20,10 +21,20 @@
       CKEDITOR.replace('topic_name');
       CKEDITOR.add            
      </script>
+=======
+  <h1>Edit Article</h1>
+  {% from "includes/_formhelpers.html" import render_field %}
+  <form method="POST" action="">
+    <div class="form-group">
+
+      {{ render_field(form.commands, class_="form-control", class="ckeditor") }}
+ 
+>>>>>>> 840c399edd6dec43958d3a4d5cf7fd0e419ce125
     </div>
 
     <div class="form-group">
       {{ render_field(form.explaination, class_="form-control",  class="ckeditor") }}
+<<<<<<< HEAD
 
     <script type="text/javascript">
       CKEDITOR.replace('explaination');
@@ -56,13 +67,31 @@
       CKEDITOR.replace('tags');
       CKEDITOR.add            
     </script>
+=======
+    </div>
+
+     <div class="form-group">
+      {{ render_field(form.notes, class_="form-control") }}
+    </div>
+
+     <div class="form-group">
+      {{ render_field(form.topic_name, class_="form-control") }}
+    </div>
+
+
+     <div class="form-group">
+      {{ render_field(form.tags, class_="form-control") }}
+>>>>>>> 840c399edd6dec43958d3a4d5cf7fd0e419ce125
     </div>
     <center>
     <p><input class="btn btn-primary" type="submit" value="Submit">
     </center>
   </form>
+<<<<<<< HEAD
 
 
 
   
+=======
+>>>>>>> 840c399edd6dec43958d3a4d5cf7fd0e419ce125
 {% endblock %}

@@ -1,15 +1,23 @@
 #!/usr/bin/python
 import sqlite3 
+<<<<<<< HEAD
 from flask import Flask, render_template, flash, redirect, url_for, session, request, logging, jsonify
+=======
+from flask import Flask, render_template, flash, redirect, url_for, session, request, logging
+>>>>>>> 840c399edd6dec43958d3a4d5cf7fd0e419ce125
 #from data import Articles
 from flask_mysqldb import MySQL
 from wtforms import Form, StringField, TextAreaField, PasswordField, validators, SelectField
 from passlib.hash import sha256_crypt
 from functools import wraps
 from string import maketrans
+<<<<<<< HEAD
 import netmiko
 import base64
 #cgi.escape sucks
+=======
+
+>>>>>>> 840c399edd6dec43958d3a4d5cf7fd0e419ce125
 app = Flask(__name__)
 
 # Config MySQL
@@ -21,8 +29,11 @@ app.config['MYSQL_CURSORCLASS'] = 'DictCursor'
 # init MYSQL
 mysql = MySQL(app)
 db_name = 'test.db'
+<<<<<<< HEAD
 
 banned_characters = ['%','<','"','\'','--+', '--', '=','<script>','</script']
+=======
+>>>>>>> 840c399edd6dec43958d3a4d5cf7fd0e419ce125
 #sqliteshitandstuff
 def interact_with_db(db_name, query):
     con = sqlite3.connect(db_name)
@@ -48,7 +59,11 @@ def about():
 # Articles
 @app.route('/articles')
 def articles():
+<<<<<<< HEAD
    articles = interact_with_db(db_name, "SELECT * FROM commands order by id desc")
+=======
+   articles = interact_with_db(db_name, "SELECT * FROM commands")
+>>>>>>> 840c399edd6dec43958d3a4d5cf7fd0e419ce125
    return render_template('articles.html', articles=articles)
 #Single Article
 @app.route('/article/<string:id>/')
@@ -163,7 +178,11 @@ def dashboard():
     con = sqlite3.connect(db_name)
     con.row_factory = sqlite3.Row
     cur = con.cursor()
+<<<<<<< HEAD
     result = cur.execute("SELECT * FROM commands ORDER BY id DESC")
+=======
+    result = cur.execute("SELECT * FROM commands")
+>>>>>>> 840c399edd6dec43958d3a4d5cf7fd0e419ce125
 
     articles = cur.fetchall()
 
@@ -177,10 +196,17 @@ def dashboard():
 
 # Article Form Class
 class ArticleForm(Form):
+<<<<<<< HEAD
     commands = TextAreaField('Commands: ', [validators.Length(min=0)])
     explaination = TextAreaField('Explaination: ', [validators.Length(min=0)])
     notes = TextAreaField('Notes: ', [validators.Length(min=0)])
     topic_name = TextAreaField('Topic Name: ', [validators.Length(min=1, max=2000)])
+=======
+    commands = TextAreaField('Commands: ', [validators.Length(min=1, max=2000)])
+    explaination = TextAreaField('Explaination: ', [validators.Length(min=10)])
+    notes = TextAreaField('Notes: ', [validators.Length(min=10)])
+    topic_name = StringField('Commands: ', [validators.Length(min=1, max=2000)])
+>>>>>>> 840c399edd6dec43958d3a4d5cf7fd0e419ce125
     tags = TextAreaField('Tags: (Are used for searching please separate with spaces) ', [validators.Length(min=1, max=2000)])
 # Add Article
 @app.route('/add_article', methods=['GET', 'POST'])
@@ -276,7 +302,11 @@ def delete_article(id):
 
     cur.close()
 
+<<<<<<< HEAD
     flash("Article Deleted", 'danger')
+=======
+    flash('Article Deleted', 'success')
+>>>>>>> 840c399edd6dec43958d3a4d5cf7fd0e419ce125
 
     return redirect(url_for('dashboard'))
 
@@ -543,13 +573,21 @@ def subnetbroadcastfinder():
             network = subnetandipbroadcastfinder[0]
             broadcast = subnetandipbroadcastfinder[1]
             inverse_mask = subnetandipbroadcastfinder[2]
+<<<<<<< HEAD
             return render_template('subnet.html',  network=network,broadcast=broadcast, inverse_mask=inverse_mask,  subnet=subnet, form=form )
+=======
+            return render_template('subnet.html',  network=network,broadcast=broadcast, inverse_mask=inverse_mask,  form=form )
+>>>>>>> 840c399edd6dec43958d3a4d5cf7fd0e419ce125
         else:
             subnetandipbroadcastfinder = subnet_and_broadcast_ip_finder(str(host_ip), str(subnet))
             network = subnetandipbroadcastfinder[0]
             broadcast = subnetandipbroadcastfinder[1]
             inverse_mask = subnetandipbroadcastfinder[2]
+<<<<<<< HEAD
             return render_template('subnet.html',  network=network,broadcast=broadcast, inverse_mask=inverse_mask,   form=form )
+=======
+            return render_template('subnet.html',  network=network,broadcast=broadcast, inverse_mask=inverse_mask,  form=form )
+>>>>>>> 840c399edd6dec43958d3a4d5cf7fd0e419ce125
      else:
         return render_template('subnet.html', form=form)
 
@@ -571,6 +609,7 @@ def ipdivider():#subnet divider
         return render_template('ipdivider.html', form=form, given_ip=given_ip, dividend=dividend,ip_class=ip_class,network_or_host=network_or_host, range_of_ips=range_of_ips )
     else:
         return render_template('ipdivider.html', form=form)
+<<<<<<< HEAD
 
 """
 END OF IP THINGS
@@ -728,5 +767,8 @@ if __name__ == '__main__':
     print connect_to_cp.send_command_timing('ls')
     print laptop
     print cellphone
+=======
+if __name__ == '__main__':
+>>>>>>> 840c399edd6dec43958d3a4d5cf7fd0e419ce125
     app.secret_key='thequickbrownfoxjumpedoverthelazydog'
     app.run(port=8000, host="0.0.0.0", debug=True)

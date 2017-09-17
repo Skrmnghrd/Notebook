@@ -1,6 +1,7 @@
 {% extends 'layout.html' %}
 
 {% block body %}
+<<<<<<< HEAD
 
 {% for article in result %}
 <ul class="breadcrumb">
@@ -13,18 +14,31 @@
 
     <center>
     	<h1>{{article.topic_name | safe}}</h1>
+=======
+{% for article in result %}
+    <center>
+    	<h1>{{article.topic_name}}</h1>
+>>>>>>> 840c399edd6dec43958d3a4d5cf7fd0e419ce125
         {% if session.logged_in == True %}
     	<a href="{{ url_for('edit_article', id=article.id )  }}"><input type="submit" value="Edit" class="btn btn-danger"></a>
         {% endif %}
     </center>
     <div>
+<<<<<<< HEAD
     <h2> Procedures/Explaination: </h2>
+=======
+    <h2> Procedures: </h2>
+>>>>>>> 840c399edd6dec43958d3a4d5cf7fd0e419ce125
     <p align="left"> {{article.explaination | safe}} </p>
     </div>
 
     <div>
     <h2> User Notes: </h2>
+<<<<<<< HEAD
     <p align="left"> {{article.notes | safe }} </p>
+=======
+    <p align="left"> {{article.notes | safe}} </p>
+>>>>>>> 840c399edd6dec43958d3a4d5cf7fd0e419ce125
     </div>
 
     <div>
@@ -35,6 +49,7 @@
     </samp>
     </code>
     </div>
+<<<<<<< HEAD
     <center> Tags: 
      <b> <p align="left"> {{article.tags | safe}} </p> </b>
      </center>
@@ -43,3 +58,9 @@
 {% endfor %}
 {% endblock %}
 
+=======
+    <!-- instead of <pre> run |safe to exec html codes -->
+{% endfor %}
+
+{% endblock %}
+>>>>>>> 840c399edd6dec43958d3a4d5cf7fd0e419ce125

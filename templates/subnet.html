@@ -2,11 +2,14 @@
 
 
 {% block body%}
+<<<<<<< HEAD
 <ul class="breadcrumb">
   <li class="breadcrumb-item"><a href="/"><small>Home</small></a></li>
   <li class="breadcrumb-item active"><small>Subnet &amp; Broadcast</small></li>
 </ul>
 
+=======
+>>>>>>> 840c399edd6dec43958d3a4d5cf7fd0e419ce125
 <div class="well">
       <center> 
         {% from "includes/_formhelpers.html" import render_field %}
@@ -18,12 +21,19 @@
                     <div class="form-group">
                     {{ render_field(form.subnet, class_="form-control")}}
                     </div>
+<<<<<<< HEAD
                  <p><input type="submit" class="btn btn-success sharp" value="Submit"></p>
+=======
+                 <p><input type="submit" class="btn btn-primary" value="Submit"></p>
+>>>>>>> 840c399edd6dec43958d3a4d5cf7fd0e419ce125
                 </form>
                 <h4> Subnet IP address: {{network}} </h4>
                <h4> Broadcast IP address:  {{ broadcast }}</h4>
                 <h4> Inverse Mask:  {{ inverse_mask}} </h4>
+<<<<<<< HEAD
                 <h4> Subnet Mask: {{ subnet }} </h4>
+=======
+>>>>>>> 840c399edd6dec43958d3a4d5cf7fd0e419ce125
         {% else %}
              <h4> Enter IP and Subnet </h4>
                 <form method="POST" action="">
@@ -33,7 +43,11 @@
                     <div class="form-group">
                     {{ render_field(form.subnet, class_="form-control")}}
                     </div>
+<<<<<<< HEAD
                  <p><input type="submit" class="btn btn-success sharp" value="Submit"></p>
+=======
+                 <p><input type="submit" class="btn btn-primary" value="Submit"></p>
+>>>>>>> 840c399edd6dec43958d3a4d5cf7fd0e419ce125
                 </form>
         {% endif %}
              <!-- 
