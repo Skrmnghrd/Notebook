@@ -1,0 +1,11 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+  <h1>{{article.topic_name}}</h1>
+  <small> {{article.topic_name}}</small>
+  <hr>
+  <div>
+    {{article.body | safe}}
+ 	
+  </div>
+{% endblock %}

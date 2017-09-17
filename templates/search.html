@@ -1,0 +1,43 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+
+
+{% from "includes/_formhelpers.html" import render_field %}
+{%  if request.method == 'POST' %}
+    <form method="POST" action="">
+        <div class="form-group">
+            {{render_field(form.searchquery,   class_="form-control")}}
+        </div>
+        <p><small>Do not try malicious things </small></p>
+        <p><input class="btn btn-success sharp" type="submit" value="Submit"></p>
+    </form>
+    {% for topics in topic_names%}
+        <ul class="list-group">
+            <h4>
+                <li class="list-group-item">
+                    <a style="color:black; text-decoration:none;" href="article/{{topics.id}}">
+                       {{topics.topic_name | safe}}
+                    </a>
+                </li>
+            </h4>
+        </ul>
+    {% endfor %}
+{% else %}
+    <form method="POST" action="">
+        <div class="form-group">
+            
+            {{render_field(form.searchquery,   class_="form-control")}}
+        </div>
+        <p><small>Do not try malicious things </small></p>
+        <p><input class="btn btn-success sharp" type="submit" value="Submit"></p>
+      
+    </form>
+{% endif %}
+<!-- 
+<h1>jQuery Example</h1>
+<p><input type=text size=5 name=a> +
+   <span id=result>?</span>
+<p><a href=# id=calculate>calculate server side</a>
+-->
+{% endblock %}

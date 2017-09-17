@@ -1,0 +1,45 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+
+{% for article in result %}
+<ul class="breadcrumb">
+  <li class="breadcrumb-item"><a href="/"><small>Home</small></a></li>
+  <li><a href="/articles"><small>Articles</small></a></li>
+  <li class="breadcrumb-item active"><small>View Article</small></li>
+</ul>
+
+
+
+    <center>
+    	<h1>{{article.topic_name | safe}}</h1>
+        {% if session.logged_in == True %}
+    	<a href="{{ url_for('edit_article', id=article.id )  }}"><input type="submit" value="Edit" class="btn btn-danger"></a>
+        {% endif %}
+    </center>
+    <div>
+    <h2> Procedures/Explaination: </h2>
+    <p align="left"> {{article.explaination | safe}} </p>
+    </div>
+
+    <div>
+    <h2> User Notes: </h2>
+    <p align="left"> {{article.notes | safe }} </p>
+    </div>
+
+    <div>
+    <h2> Commands: </h2>
+    <code>
+    <samp>
+        <p align="left"> {{article.commands | safe}} </p>
+    </samp>
+    </code>
+    </div>
+    <center> Tags: 
+     <b> <p align="left"> {{article.tags | safe}} </p> </b>
+     </center>
+    <!-- instead of <pre> run |safe to exec html codes -->
+
+{% endfor %}
+{% endblock %}
+

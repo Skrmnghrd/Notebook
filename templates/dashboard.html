@@ -1,0 +1,53 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+<center> 
+  <ul class="breadcrumb">
+    <li><a href="/"><small>Home</small></a></li>
+    <li><a href="/dashboard"><small>Dashboard</small></a></li>
+  </ul>
+  <h1>Dashboard</h1> 
+<p><small> Welcome {{session.username}}</small></p>
+
+  <a class="btn btn-success sharp darkbutton" href="/add_article"> Add Article</a>
+  <span class="anchor" id="positionscreen" ></span>
+  <a class="btn btn-success sharp darkbutton" href="#positionscreen"> Position Screen </a>
+</center>
+  <hr>
+  <div class="scrollit">
+    <div class="row">
+  <table class="table table-striped">
+    <tr>
+      <th></th>
+      <th>Topic Name / Title</th>
+      <th>User Notes</th>
+      <th>Tags</th>
+      <th></th>
+      <th></th>
+      
+    </tr>
+    {% for article in articles %}
+      <tr>
+        <td> </td>
+        <td class="topic_title"><a href="edit_article/{{article.id}}" class="pull-left">{{article.topic_name | safe}}</a></td>
+        <td>
+          <div style='overflow:hidden; height:50px;'>
+          <div style='overflow:scroll; height:58px'>
+            {{article.notes | safe}}
+          </div>
+          </div>
+          </td>
+        <td>{{article.tags | safe}}</td>
+        <td><a href="edit_article/{{article.id}}" class="btn btn-default pull-right">Edit</a></td>
+        <td>
+          <form action="{{url_for('delete_article', id=article.id)}}" method="post">
+            <input type="hidden" name="_method" value="DELETE">
+            <input type="submit" value="Delete" class="btn btn-danger">
+          </form>
+        </td>
+      </tr>
+    {% endfor %}
+  </table>
+   </div>
+    </div>
+{% endblock %}

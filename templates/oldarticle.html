@@ -1,0 +1,12 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+
+  {% for article in result %}
+      <li class="list-group-item">{{article.topic_name}}</li>
+  {% endfor %}
+
+  {{test}}
+ 
+
+{% endblock %}
