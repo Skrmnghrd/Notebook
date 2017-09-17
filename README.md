@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 # FlaskApp
 
 Simple application with authentication and CRUD functionality using the Python Flask micro-framework
@@ -16,7 +16,6 @@ To use this template, your computer needs:
 python app.py
 ```
 
-=======
 # Notebook
 A digital notebook, tool, cheatsheet, for network engineering
 
@@ -29,4 +28,3 @@ Better interface? I hope so
 I still havent put the requirements.txt, just google for any import errors,
 
 Might need sudo privs if you are using it on port 80
->>>>>>> 840c399edd6dec43958d3a4d5cf7fd0e419ce125
