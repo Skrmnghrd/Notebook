@@ -716,7 +716,7 @@ laptop = {
 	'device_type': 'linux',
 	'ip': 'localhost',
 	'username': 'skrm',
-	'password': decoder('Vm0wd2VHUXhUWGROVldSWVYwZDRWRll3Wkc5V1ZsbDNXa1JTVjJKR2JETlhhMk0xWVd4S2MxZHFRbFZXYlUweFZtcEdZV1JIVmtWUmJIQk9UVEJLU1ZacVNqUlpWMDE1VTJ0V1ZXSkhVbkJWYlhSM1UxWmtWMWRzV214U2JWSkpWbTEwVjFWdFNrZFhiR2hhWWtkU2RsWkdXbUZqTVdSMFVteGtUbFp1UWxoV1JscFhWakpHU0ZadVJsSldSM001'),
+	'password': decoder('awdawdawdawdawd'),
 	'port' : 22
 	
 }
@@ -724,7 +724,7 @@ cellphone = {
     'device_type': 'linux',
     'ip' : 'localhost',
     'username': 'root',
-    'password': decoder('Vm0wd2VHUXhUWGROVldSWVYwZDRWRll3Wkc5V1ZsbDNXa1JTVjJKR2JETlhhMk0xWVd4S2MxZHFRbFZXYlUweFZtcEdZV1JIVmtWUmJIQk9UVEJLU1ZacVNqUlpWMDE1VTJ0V1ZXSkhVbkJWYlhSM1UxWmtWMWRzV214U2JWSkpWbTEwVjFWdFNrZFhiR2hhWWtkU2RsWkdXbUZqTVdSMFVteGtUbFp1UWxoV1JscFhWakpHU0ZadVJsSldSM001'),
+    'password': decoder('awdawdawawd'),
     'port' : 2222
 }
 
